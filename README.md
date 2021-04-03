@@ -8,7 +8,7 @@ React Google Tag Manager
 
 ## Introduction
 
-A simple React package to implement custom Google Tag Manager tags. Designed to use and extend [GTM](https://developers.google.com/tag-manager/quickstart) snippets.
+A simple React package to implement custom Google Tag Manager event. Designed to use and extend [GTM](https://developers.google.com/tag-manager/quickstart) snippets.
 
 ```javascript
 import track from "@phntms/react-gtm";
