@@ -1,13 +1,18 @@
-interface Props {
-  argument1: number;
-  argument2?: number;
+import { TrackingProps } from "./types";
+
+declare global {
+  interface Window {
+    dataLayer: TrackingProps[];
+  }
 }
 
-const useLibrary = ({ argument1, argument2 = 0 }: Props) => {
-  if (!argument1) throw Error("argument 1 not specified");
-  return {
-    something: argument1 + argument2,
-  };
+const track = ({ type, ...args }: TrackingProps) => {
+  // If window isn't supported and dataLayer doesn't exist, return...
+  if (typeof window === "undefined" || !window.dataLayer) return;
+
+  // Else, add tracking event
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ type, ...args });
 };
 
-export default useLibrary;
+export default track;
