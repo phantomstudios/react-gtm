@@ -2,10 +2,7 @@ export interface EmbedTrackingProps {
   id: string;
 }
 
-type trackingType = "event" | "config";
-
 export interface TrackingProps {
-  type: trackingType;
   [key: string]: string;
 }
 
@@ -15,4 +12,5 @@ export interface EventTrackingProps {
   category?: string;
   action?: string;
   label?: string;
+  value?: string | number;
 }
