@@ -1,5 +1,5 @@
 export interface EmbedTrackingProps {
-  id: string;
+  id?: string;
 }
 
 export interface TrackingProps {
