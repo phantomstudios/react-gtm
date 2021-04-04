@@ -20,7 +20,7 @@ pass. Testing is automated using GitHub Actions CI.
 ## Submitting changes
 
 Please send a
-[GitHub Pull Request to @pnhtms/react-gtm](https://github.com/phantomstudios/react-gtm/pull/new/master)
+[GitHub Pull Request to @phntms/react-gtm](https://github.com/phantomstudios/react-gtm/pull/new/master)
 with a clear list of what you've done (read more about
 [pull requests](https://help.github.com/en/articles/about-pull-requests)). When you send a pull
 request, please make sure you've covered off all the points in the template.
