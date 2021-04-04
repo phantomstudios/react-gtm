@@ -4,11 +4,11 @@
 [![Actions Status][ci-image]][ci-url]
 [![PR Welcome][npm-downloads-image]][npm-downloads-url]
 
-React Google Tag Manager
+Lightweight React Google Tag Manager
 
 ## Introduction
 
-A simple React library to implement custom Google Tag Manager events. Designed to use and extend [GTM](https://developers.google.com/tag-manager/quickstart) snippets.
+A lightweight React library to implement custom Google Tag Manager events. Designed to use and extend [GTM](https://developers.google.com/tag-manager/quickstart) snippets.
 
 ```javascript
 import { trackEvent } from "@phntms/react-gtm";
@@ -80,7 +80,7 @@ export default class MyDocument extends Document {
 | Parameter | Type | Default | Required | Notes |
 | -------- | ---- | ------- | -------- | ------- |
 | event | `string` | "interaction" | No | Custom GTM event name, such as "customEvent". |
-| ...args | `[key: string]: string | number` | undefined | No | Optional values to append to GTM event. Example of recommended properties to include; `name`, `category`, `action` and `label`. |
+| data | `[key: string]: any` | undefined | No | Optional data values to add to GTM event. Example of recommended properties to include; `name`, `category`, `action` and `label`. |
 
 Primarily function used to push new tracking events to GTM container.
 
@@ -89,7 +89,7 @@ Primarily function used to push new tracking events to GTM container.
 | Parameter | Type | Default | Required | Notes |
 | -------- | ---- | ------- | -------- | ------- |
 | event | `string` | undefined | No | Custom GTM event name, such as "customEvent". |
-| ...args | `[key: string]: string | number` | undefined | No | Optional values to append to GTM event. Example of recommended properties to include; `name`, `category`, `action` and `label`. |
+| data | `[key: string]: any` | undefined | No | Optional data values to add to GTM event. Example of recommended properties to include; `name`, `category`, `action` and `label`. |
 
 Extends `trackEvent()` and returns in a callable React `useCallback` hook.
 
