@@ -1,3 +1,5 @@
+import React from "react";
+
 import { EmbedTrackingProps } from "../types";
 
 const TrackingBodyScript = ({ id }: EmbedTrackingProps) => (
