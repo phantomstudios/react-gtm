@@ -67,7 +67,7 @@ export default class MyDocument extends Document {
 
 ## Components
 
-### &lt;TrackingHeadScript /> and &lt;TrackingBodyScript />
+### <TrackingHeadScript /> and <TrackingBodyScript />
 
 | Property | Type | Default | Required | Notes |
 | -------- | ---- | ------- | -------- | ------- |
