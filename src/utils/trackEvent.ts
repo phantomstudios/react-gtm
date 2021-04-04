@@ -1,4 +1,5 @@
 import { TrackingEventProps } from "../types";
+import { IS_BROWSER } from "./utils";
 
 declare global {
   interface Window {
@@ -7,8 +8,8 @@ declare global {
 }
 
 const trackEvent = (event = "interaction", data?: TrackingEventProps) => {
-  // If window isn't supported and dataLayer doesn't exist, return...
-  if (typeof window === "undefined" || !window.dataLayer) return;
+  // If not in browser and dataLayer doesn't exist, return...
+  if (!IS_BROWSER || !window.dataLayer) return;
 
   // Else, add tracking event
   window.dataLayer = window.dataLayer || [];

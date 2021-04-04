@@ -4,11 +4,11 @@
 [![Actions Status][ci-image]][ci-url]
 [![PR Welcome][npm-downloads-image]][npm-downloads-url]
 
-Lightweight React Google Tag Manager
+Lightweight React Google Tag Manager.
 
 ## Introduction
 
-A lightweight React library to implement custom Google Tag Manager events. Designed to use and extend [GTM](https://developers.google.com/tag-manager/quickstart) snippets.
+A lightweight SSR React library to implement custom Google Tag Manager events. Designed to use and extend [GTM](https://developers.google.com/tag-manager/quickstart) snippets. This library is also SSR safe and does not break when used without window existing.
 
 ```javascript
 import { trackEvent } from "@phntms/react-gtm";

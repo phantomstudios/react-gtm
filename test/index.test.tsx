@@ -7,8 +7,13 @@ import {
   TrackingHeadScript,
   TrackingBodyScript,
 } from "../src";
+import { IS_BROWSER } from "../src/utils/utils";
 
 const ID = "GTM-abc123";
+
+beforeEach(() => {
+  if (IS_BROWSER) window.dataLayer = [];
+});
 
 describe("<TrackingHeadScript />", () => {
   it("adds TrackingHeadScript to HTML markup", async () => {
@@ -44,6 +49,8 @@ describe("<TrackingBodyScript />", () => {
 
 describe("trackEvent()", () => {
   it("adds tracking event to dataLayer", async () => {
+    if (!IS_BROWSER) return;
+
     const event = "customEvent";
     const data = {
       name: "name",
@@ -53,12 +60,14 @@ describe("trackEvent()", () => {
     };
     trackEvent(event, data);
 
-    expect(window.dataLayer[0]).toEqual(event);
+    expect(window.dataLayer[0]).toEqual({ event, ...data });
   });
 });
 
 describe("useTracking()", () => {
   it("adds tracking event to dataLayer", async () => {
+    if (!IS_BROWSER) return;
+
     const event = "customEvent";
     const data = {
       name: "name",
@@ -68,6 +77,6 @@ describe("useTracking()", () => {
     };
     renderHook(() => useTracking(event, data));
 
-    expect(window.dataLayer[0]).toEqual(event);
+    expect(window.dataLayer[0]).toEqual({ event, ...data });
   });
 });
