@@ -14,13 +14,15 @@ describe("<TrackingHeadScript />", () => {
   it("adds TrackingHeadScript to HTML markup", async () => {
     render(<TrackingHeadScript id={ID} />);
 
+    // todo: need to target something else
     expect(document.getElementsByTagName("script")).toContain(ID);
   });
 
   it("doesn't add <TrackingHeadScript /> to HTML markup if no id", async () => {
     render(<TrackingHeadScript />);
 
-    expect(document.getElementsByTagName("iframe")).toEqual(null);
+    // todo: need to target something else
+    expect(document.getElementsByTagName("script")).toEqual(null);
   });
 });
 
@@ -28,12 +30,14 @@ describe("<TrackingBodyScript />", () => {
   it("adds TrackingBodyScript to HTML markup", async () => {
     render(<TrackingBodyScript id={ID} />);
 
+    // todo: need to target something else
     expect(document.getElementsByTagName("iframe")).toContain(`id=${ID}`);
   });
 
   it("doesn't add <TrackingBodyScript /> to HTML markup if no id", async () => {
     render(<TrackingBodyScript />);
 
+    // todo: need to target something else
     expect(document.getElementsByTagName("iframe")).toEqual(null);
   });
 });
