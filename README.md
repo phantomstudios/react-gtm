@@ -17,7 +17,7 @@ trackEvent('customEvent', {
   name: "CTA - To External",
   category: "CTA",
   action: "To: https://phantom.land/",
-  label: "CTA Click",
+  label: "Click",
 });
 
 ```
@@ -65,16 +65,51 @@ export default class MyDocument extends Document {
 }
 ```
 
-## API
+## Components
 
-### Input
+### &lt;TrackingHeadScript />
 
-<!-- todo: needs updating to cover trackEvent, trackingBodyScript, trackingHeadScript + window.dataLayer -->
+| Property | Type | Default | Required | Notes |
+| -------- | ---- | ------- | -------- | ------- |
+| **id** | `string` | | **Yes** | GTM id, will be in the format; `GTM-000000`. |
 
-|Value|Type|Required|Notes|
-|------|-----|-----|-----|
-|id| `String`| Yes | GTM id, will be in the format; `GTM-000000`.|
-|dataLayer| `Object`| No | window.dataLayer object that contains all information of events passed into Google Tag Manager.|
+Component must be placed in `head` of app.
+
+**Note**: If used alongside any cookie consent scripts, must be placed after.
+
+### &lt;TrackingBodyScript />
+
+| Property | Type | Default | Required | Notes |
+| -------- | ---- | ------- | -------- | ------- |
+| **id** | `string` | | **Yes** | GTM id, will be in the format; `GTM-000000`. |
+
+Component must be placed after `&lt;TrackingHeadScript />` in the `body` of the app.
+
+### trackEvent()
+
+| Parameter | Type | Default | Required | Notes |
+| -------- | ---- | ------- | -------- | ------- |
+| event | `string` | "interaction" | No | Custom GTM event name, such as "customEvent". |
+| ...args | `[key: string]: string | number` | undefined | No | Optional values to append to GTM event. Example of recommended properties to include; `name`, `category`, `action` and `label`. |
+
+### useTracking()
+
+Extends `trackEvent()` and returns in a callable React `useCallback` hook.
+
+| Parameter | Type | Default | Required | Notes |
+| -------- | ---- | ------- | -------- | ------- |
+| event | `string` | undefined | No | Custom GTM event name, such as "customEvent". |
+| ...args | `[key: string]: string | number` | undefined | No | Optional values to append to GTM event. Example of recommended properties to include; `name`, `category`, `action` and `label`. |
+
+### window.dataLayer
+
+This library extends `window` and exposes the `window.dataLayer.` object, which contains all GTM events passed into Google Tag Manager.
+
+## Further Resources
+
+When implementing GTM events, the following resources are recommended to aid implementation:
+
+- [Omnibug](https://chrome.google.com/webstore/detail/omnibug/bknpehncffejahipecakbfkomebjmokl?hl=en) - Chrome browser extension to decode and display outgoing GTM events from within Inspect Element.
 
 [npm-image]: https://img.shields.io/npm/v/@phntms/gtm.svg?style=flat-square&logo=react
 [npm-url]: https://npmjs.org/package/@phntms/gtm

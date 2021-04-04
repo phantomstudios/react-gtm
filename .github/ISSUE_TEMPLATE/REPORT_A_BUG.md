@@ -9,11 +9,11 @@ about: "Is something not working as you expect?"
 
 e.g. "Data refuses to load when accessing via https..."
 
-> Which version of react-gtm are you using?
+> Which version of @phntms/react-gtm are you using?
 
 e.g. `0.1.0`
 
-> What version of React are you using react-gtm within?
+> What version of React are you using @phntms/react-gtm within?
 
 e.g. `16.9.0`
 
