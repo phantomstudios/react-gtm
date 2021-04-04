@@ -67,23 +67,13 @@ export default class MyDocument extends Document {
 
 ## Components
 
-### &lt;TrackingHeadScript />
+### &lt;TrackingHeadScript /> and &lt;TrackingBodyScript />
 
 | Property | Type | Default | Required | Notes |
 | -------- | ---- | ------- | -------- | ------- |
-| **id** | `string` | | **Yes** | GTM id, will be in the format; `GTM-000000`. |
+| **id** | `string` | | **Yes** | The Container ID that uniquely identifies the GTM Container. Will be in the format; `GTM-000000`. |
 
-Component must be placed in `head` of app.
-
-**Note**: If used alongside any cookie consent scripts, must be placed after.
-
-### &lt;TrackingBodyScript />
-
-| Property | Type | Default | Required | Notes |
-| -------- | ---- | ------- | -------- | ------- |
-| **id** | `string` | | **Yes** | GTM id, will be in the format; `GTM-000000`. |
-
-Component must be placed after `<TrackingHeadScript />` in the `body` of the app.
+**Note**: If used alongside any cookie consent scripts, `<TrackingHeadScript />` must be placed after.
 
 ### trackEvent()
 
