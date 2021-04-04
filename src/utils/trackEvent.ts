@@ -6,7 +6,7 @@ declare global {
   }
 }
 
-const trackEvent = ({ event = "interaction", ...args }: TrackingProps) => {
+const trackEvent = ({ event = "interaction", args }: TrackingProps) => {
   // If window isn't supported and dataLayer doesn't exist, return...
   if (typeof window === "undefined" || !window.dataLayer) return;
 

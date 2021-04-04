@@ -3,6 +3,7 @@ export interface EmbedTrackingProps {
 }
 
 export interface TrackingProps {
-  event: string;
-  [key: string]: string | number;
+  event?: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  [key: string]: any;
 }

@@ -44,30 +44,34 @@ describe("<TrackingBodyScript />", () => {
 
 describe("trackEvent()", () => {
   it("adds tracking event to dataLayer", async () => {
-    const event = "customEvent";
-    const args = {
-      name: "name",
-      category: "category",
-      action: "action",
-      label: "label",
+    const event = {
+      event: "customEvent",
+      args: {
+        name: "name",
+        category: "category",
+        action: "action",
+        label: "label",
+      },
     };
-    trackEvent(event, ...args);
+    trackEvent(event);
 
-    expect(window.dataLayer[0].event).toEqual(event);
+    expect(window.dataLayer[0]).toEqual(event);
   });
 });
 
 describe("useTracking()", () => {
   it("adds tracking event to dataLayer", async () => {
-    const event = "customEvent";
-    const args = {
-      name: "name",
-      category: "category",
-      action: "action",
-      label: "label",
+    const event = {
+      event: "customEvent",
+      args: {
+        name: "name",
+        category: "category",
+        action: "action",
+        label: "label",
+      },
     };
-    renderHook(() => useTracking(event, args));
+    renderHook(() => useTracking(event));
 
-    expect(window.dataLayer[0]).toEqual(args);
+    expect(window.dataLayer[0]).toEqual(event);
   });
 });
