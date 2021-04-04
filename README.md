@@ -27,7 +27,7 @@ trackEvent('customEvent', {
 Install this package with `npm`.
 
 ```bash
-npm i @phntms/gtm
+npm i @phntms/react-gtm
 ```
 
 ## Usage
