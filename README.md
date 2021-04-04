@@ -82,7 +82,7 @@ export default class MyDocument extends Document {
 | event | `string` | "interaction" | No | Custom GTM event name, such as "customEvent". |
 | ...args | `[key: string]: string | number` | undefined | No | Optional values to append to GTM event. Example of recommended properties to include; `name`, `category`, `action` and `label`. |
 
-Primarily function used to push new tracking event to GTM using `dataLayer`.
+Primarily function used to push new tracking events to GTM container.
 
 ### useTracking()
 
