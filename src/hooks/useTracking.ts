@@ -1,9 +1,9 @@
 import { useCallback } from "react";
 
-import { TrackingProps } from "../types";
+import { TrackingEventProps } from "../types";
 import trackEvent from "../utils/trackEvent";
 
-const useTracking = ({ event, args }: TrackingProps) =>
-  useCallback(() => trackEvent({ event, ...args }), [event, args]);
+const useTracking = (event: TrackingEventProps) =>
+  useCallback(() => trackEvent(event), [event]);
 
 export default useTracking;
