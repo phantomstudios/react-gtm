@@ -83,7 +83,7 @@ Component must be placed in `head` of app.
 | -------- | ---- | ------- | -------- | ------- |
 | **id** | `string` | | **Yes** | GTM id, will be in the format; `GTM-000000`. |
 
-Component must be placed after `&lt;TrackingHeadScript />` in the `body` of the app.
+Component must be placed after `<TrackingHeadScript />` in the `body` of the app.
 
 ### trackEvent()
 
@@ -92,18 +92,20 @@ Component must be placed after `&lt;TrackingHeadScript />` in the `body` of the 
 | event | `string` | "interaction" | No | Custom GTM event name, such as "customEvent". |
 | ...args | `[key: string]: string | number` | undefined | No | Optional values to append to GTM event. Example of recommended properties to include; `name`, `category`, `action` and `label`. |
 
-### useTracking()
+Primarily function used to push new tracking event to GTM using `dataLayer`.
 
-Extends `trackEvent()` and returns in a callable React `useCallback` hook.
+### useTracking()
 
 | Parameter | Type | Default | Required | Notes |
 | -------- | ---- | ------- | -------- | ------- |
 | event | `string` | undefined | No | Custom GTM event name, such as "customEvent". |
 | ...args | `[key: string]: string | number` | undefined | No | Optional values to append to GTM event. Example of recommended properties to include; `name`, `category`, `action` and `label`. |
 
+Extends `trackEvent()` and returns in a callable React `useCallback` hook.
+
 ### window.dataLayer
 
-This library extends `window` and exposes the `window.dataLayer.` object, which contains all GTM events passed into Google Tag Manager.
+This library extends `window` and exposes the `window.dataLayer` object, which contains all GTM events passed into Google Tag Manager.
 
 ## Further Resources
 
