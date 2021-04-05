@@ -89,7 +89,7 @@ This library extends `window` and exposes the `window.dataLayer` GTM container o
 
 ## Further Resources
 
-Useful resource for implementing custom GTM events;
+Useful resource for implementing custom GTM events:
 
 - [Omnibug](https://chrome.google.com/webstore/detail/omnibug/bknpehncffejahipecakbfkomebjmokl?hl=en) - Chrome browser extension to decode and display outgoing GTM events from within Inspect Element.
 
