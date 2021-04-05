@@ -24,7 +24,7 @@ npm i @phntms/react-gtm
 
 | Property | Type | Default | Required | Notes |
 | -------- | ---- | ------- | -------- | ------- |
-| **id** | `string` | | **Yes** | The Container ID that uniquely identifies the GTM Container. Will be in the format; `GTM-000000`. |
+| **id** | `string` | | **Yes** | ID that uniquely identifies GTM Container. Will be in the format; `GTM-xxxxxx`. |
 
 To initialize GTM, add `TrackingHeadScript` to the `head` of the page and `TrackingBodyScript` to the `body`.
 
