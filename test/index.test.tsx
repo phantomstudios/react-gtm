@@ -13,7 +13,7 @@ describe("<TrackingHeadScript />", () => {
     expect(renderer.toJSON()).toContain(ID);
   });
 
-  it("doesn't render <TrackingHeadScript /> if no ID", async () => {
+  it("doesn't render TrackingHeadScript if no ID", async () => {
     const renderer = TestRenderer.create(<TrackingHeadScript />);
     expect(renderer.toJSON()).toEqual(null);
   });
@@ -25,7 +25,7 @@ describe("<TrackingBodyScript />", () => {
     expect(renderer.toJSON()).toContain(`id=${ID}`);
   });
 
-  it("doesn't render <TrackingBodyScript /> if no ID", async () => {
+  it("doesn't render TrackingBodyScript if no ID", async () => {
     const renderer = TestRenderer.create(<TrackingBodyScript />);
     expect(renderer.toJSON()).toEqual(null);
   });
