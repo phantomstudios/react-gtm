@@ -1,4 +1,6 @@
-import { render } from "test-utils";
+import React from "react";
+
+import TestRenderer from "react-test-renderer";
 
 import { trackEvent, TrackingHeadScript, TrackingBodyScript } from "../src";
 import { IS_BROWSER } from "../src/utils/platform";
@@ -6,34 +8,26 @@ import { IS_BROWSER } from "../src/utils/platform";
 const ID = "GTM-abc123";
 
 describe("<TrackingHeadScript />", () => {
-  it("adds TrackingHeadScript to HTML markup", async () => {
-    render(<TrackingHeadScript id={ID} />);
-
-    // todo: need to target something else
-    expect(document.getElementsByTagName("script")).toContain(ID);
+  it("renders TrackingHeadScript with ID", async () => {
+    const renderer = TestRenderer.create(<TrackingHeadScript id={ID} />);
+    expect(renderer.toJSON()).toContain(ID);
   });
 
-  it("doesn't add <TrackingHeadScript /> to HTML markup if no id", async () => {
-    render(<TrackingHeadScript />);
-
-    // todo: need to target something else
-    expect(document.getElementsByTagName("script")).toEqual(null);
+  it("doesn't render <TrackingHeadScript /> if no ID", async () => {
+    const renderer = TestRenderer.create(<TrackingHeadScript />);
+    expect(renderer.toJSON()).toEqual(null);
   });
 });
 
 describe("<TrackingBodyScript />", () => {
-  it("adds TrackingBodyScript to HTML markup", async () => {
-    render(<TrackingBodyScript id={ID} />);
-
-    // todo: need to target something else
-    expect(document.getElementsByTagName("iframe")).toContain(`id=${ID}`);
+  it("renders TrackingBodyScript with ID", async () => {
+    const renderer = TestRenderer.create(<TrackingBodyScript id={ID} />);
+    expect(renderer.toJSON()).toContain(`id=${ID}`);
   });
 
-  it("doesn't add <TrackingBodyScript /> to HTML markup if no id", async () => {
-    render(<TrackingBodyScript />);
-
-    // todo: need to target something else
-    expect(document.getElementsByTagName("iframe")).toEqual(null);
+  it("doesn't render <TrackingBodyScript /> if no ID", async () => {
+    const renderer = TestRenderer.create(<TrackingBodyScript />);
+    expect(renderer.toJSON()).toEqual(null);
   });
 });
 
