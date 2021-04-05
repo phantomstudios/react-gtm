@@ -62,6 +62,14 @@ describe("trackEvent()", () => {
 
     expect(window.dataLayer[0]).toEqual({ event, ...data });
   });
+
+  it("doesn't break build if empty", async () => {
+    if (!IS_BROWSER) return;
+
+    trackEvent();
+
+    expect(window.dataLayer).toHaveLength(1);
+  });
 });
 
 describe("useTracking()", () => {
@@ -78,5 +86,13 @@ describe("useTracking()", () => {
     renderHook(() => useTracking(event, data));
 
     expect(window.dataLayer[0]).toEqual({ event, ...data });
+  });
+
+  it("doesn't break build if empty", async () => {
+    if (!IS_BROWSER) return;
+
+    renderHook(useTracking);
+
+    expect(window.dataLayer).toHaveLength(1);
   });
 });
