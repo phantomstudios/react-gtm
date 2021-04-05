@@ -5,27 +5,27 @@ import TestRenderer from "react-test-renderer";
 import { trackEvent, TrackingHeadScript, TrackingBodyScript } from "../src";
 import { IS_BROWSER } from "../src/utils/platform";
 
-const ID = "GTM-abc123";
+const ID = "GTM-xxxxxx";
 
 describe("<TrackingHeadScript />", () => {
-  it("renders TrackingHeadScript with ID", async () => {
+  it("renders component with ID", async () => {
     const renderer = TestRenderer.create(<TrackingHeadScript id={ID} />);
-    expect(renderer.toJSON()).toContain(ID);
+    expect(JSON.stringify(renderer.toJSON()).includes(ID)).toBe(true);
   });
 
-  it("doesn't render TrackingHeadScript if no ID", async () => {
+  it("doesn't render component if no ID", async () => {
     const renderer = TestRenderer.create(<TrackingHeadScript />);
     expect(renderer.toJSON()).toEqual(null);
   });
 });
 
 describe("<TrackingBodyScript />", () => {
-  it("renders TrackingBodyScript with ID", async () => {
+  it("renders component with ID", async () => {
     const renderer = TestRenderer.create(<TrackingBodyScript id={ID} />);
-    expect(renderer.toJSON()).toContain(`id=${ID}`);
+    expect(JSON.stringify(renderer.toJSON()).includes(`id=${ID}`)).toBe(true);
   });
 
-  it("doesn't render TrackingBodyScript if no ID", async () => {
+  it("doesn't render component if no ID", async () => {
     const renderer = TestRenderer.create(<TrackingBodyScript />);
     expect(renderer.toJSON()).toEqual(null);
   });

@@ -37,7 +37,7 @@
   "author": "Paulo Ferreira Jorge (paulo.jorge@phntms.com)",
   "license": "MIT",
   "peerDependencies": {
-    "react": "^16.8.0"
+    "react": ">=16.8.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.4.5",
