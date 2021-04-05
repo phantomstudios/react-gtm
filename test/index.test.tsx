@@ -1,7 +1,7 @@
 import { render } from "test-utils";
 
 import { trackEvent, TrackingHeadScript, TrackingBodyScript } from "../src";
-import { IS_BROWSER } from "../src/utils/utils";
+import { IS_BROWSER } from "../src/utils/platform";
 
 const ID = "GTM-abc123";
 

@@ -1,5 +1,5 @@
-import { TrackingEventProps } from "./types";
-import { IS_BROWSER } from "./utils";
+import { TrackingEventProps } from "../types";
+import { IS_BROWSER } from "./platform";
 
 declare global {
   interface Window {
