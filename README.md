@@ -13,13 +13,12 @@ Designed to use and extend [GTM](https://developers.google.com/tag-manager/quick
 ```javascript
 import { trackEvent } from "@phntms/react-gtm";
 
-trackEvent('customEvent', {
+trackEvent("customEvent", {
   name: "CTA - To External",
   category: "CTA",
   action: "To: https://phantom.land/",
   label: "Click",
 });
-
 ```
 
 ## Installation
