@@ -1,19 +1,9 @@
-import { renderHook } from "@testing-library/react-hooks";
 import { render } from "test-utils";
 
-import {
-  trackEvent,
-  useTracking,
-  TrackingHeadScript,
-  TrackingBodyScript,
-} from "../src";
+import { trackEvent, TrackingHeadScript, TrackingBodyScript } from "../src";
 import { IS_BROWSER } from "../src/utils/utils";
 
 const ID = "GTM-abc123";
-
-beforeEach(() => {
-  if (IS_BROWSER) window.dataLayer = [];
-});
 
 describe("<TrackingHeadScript />", () => {
   it("adds TrackingHeadScript to HTML markup", async () => {
@@ -48,6 +38,10 @@ describe("<TrackingBodyScript />", () => {
 });
 
 describe("trackEvent()", () => {
+  beforeEach(() => {
+    if (IS_BROWSER) window.dataLayer = [];
+  });
+
   it("adds tracking event to dataLayer", async () => {
     if (!IS_BROWSER) return;
 
@@ -63,35 +57,10 @@ describe("trackEvent()", () => {
     expect(window.dataLayer[0]).toEqual({ event, ...data });
   });
 
-  it("doesn't break build if empty", async () => {
+  it("doesn't break build if tracking event empty", async () => {
     if (!IS_BROWSER) return;
 
     trackEvent();
-
-    expect(window.dataLayer).toHaveLength(1);
-  });
-});
-
-describe("useTracking()", () => {
-  it("adds tracking event to dataLayer", async () => {
-    if (!IS_BROWSER) return;
-
-    const event = "customEvent";
-    const data = {
-      name: "name",
-      category: "category",
-      action: "action",
-      label: "label",
-    };
-    renderHook(() => useTracking(event, data));
-
-    expect(window.dataLayer[0]).toEqual({ event, ...data });
-  });
-
-  it("doesn't break build if empty", async () => {
-    if (!IS_BROWSER) return;
-
-    renderHook(useTracking);
 
     expect(window.dataLayer).toHaveLength(1);
   });

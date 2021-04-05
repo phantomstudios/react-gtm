@@ -84,15 +84,6 @@ export default class MyDocument extends Document {
 
 Primarily function used to push new tracking events to GTM container.
 
-### useTracking()
-
-| Parameter | Type | Default | Required | Notes |
-| -------- | ---- | ------- | -------- | ------- |
-| event | `string` | undefined | No | Custom GTM event name, such as "customEvent". |
-| data | `[key: string]: any` | undefined | No | Optional data values to add to GTM event. Example of recommended properties to include; `name`, `category`, `action` and `label`. |
-
-Extends `trackEvent()` and returns in a callable React `useCallback` hook.
-
 ### window.dataLayer
 
 This library extends `window` and exposes the `window.dataLayer` object, which contains all GTM events passed into Google Tag Manager.

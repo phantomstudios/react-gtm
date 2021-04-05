@@ -1,4 +1,4 @@
-import { TrackingEventProps } from "../types";
+import { TrackingEventProps } from "./types";
 import { IS_BROWSER } from "./utils";
 
 declare global {
