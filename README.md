@@ -37,7 +37,7 @@ import Document, {
   Main,
   NextScript,
 } from "next/document";
-import { trackingHeadScript, trackingBodyScript } from "@phntms/react-gtm";
+import { TrackingHeadScript, TrackingBodyScript } from "@phntms/react-gtm";
 
 const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_TRACKING_ID || "";
 
@@ -46,10 +46,10 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <trackingHeadScript id={GA_TRACKING_ID} />
+          <TrackingHeadScript id={GA_TRACKING_ID} />
         </Head>
         <body>
-          <trackingBodyScript id={GA_TRACKING_ID} />
+          <TrackingBodyScript id={GA_TRACKING_ID} />
           <Main />
           <NextScript />
         </body>
