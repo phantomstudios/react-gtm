@@ -1,4 +1,4 @@
-# @phntms/gtm
+# @phntms/react-gtm
 
 [![NPM version][npm-image]][npm-url]
 [![Actions Status][ci-image]][ci-url]
@@ -22,9 +22,9 @@ npm i @phntms/react-gtm
 
 ### &lt;TrackingHeadScript /> and &lt;TrackingBodyScript />
 
-| Property | Type     | Default | Required | Notes                                                                           |
-| -------- | -------- | ------- | -------- | ------------------------------------------------------------------------------- |
-| **id**   | `string` |         | **Yes**  | ID that uniquely identifies GTM Container. Will be in the format; `GTM-xxxxxx`. |
+| Property | Type     | Default   | Required | Notes                                                                           |
+| -------- | -------- | --------- | -------- | ------------------------------------------------------------------------------- |
+| **id**   | `string` | undefined | **Yes**  | ID that uniquely identifies GTM Container. Will be in the format; `GTM-xxxxxx`. |
 
 To initialize GTM, add `TrackingHeadScript` to the `head` of the page and `TrackingBodyScript` to the `body`.
 
@@ -89,13 +89,13 @@ This library extends `window` and exposes the `window.dataLayer` GTM container o
 
 ## Further Resources
 
-Useful resource for implementing custom GTM events;
+Useful resource for implementing custom GTM events:
 
 - [Omnibug](https://chrome.google.com/webstore/detail/omnibug/bknpehncffejahipecakbfkomebjmokl?hl=en) - Chrome browser extension to decode and display outgoing GTM events from within Inspect Element.
 
-[npm-image]: https://img.shields.io/npm/v/@phntms/gtm.svg?style=flat-square&logo=react
-[npm-url]: https://npmjs.org/package/@phntms/gtm
-[npm-downloads-image]: https://img.shields.io/npm/dm/@phntms/gtm.svg
-[npm-downloads-url]: https://npmcharts.com/compare/@phntms/gtm?minimal=true
-[ci-image]: https://github.com/phantomstudios/gtm/workflows/test/badge.svg
+[npm-image]: https://img.shields.io/npm/v/@phntms/react-gtm.svg?style=flat-square&logo=react
+[npm-url]: https://npmjs.org/package/@phntms/react-gtm
+[npm-downloads-image]: https://img.shields.io/npm/dm/@phntms/react-gtm.svg
+[npm-downloads-url]: https://npmcharts.com/compare/@phntms/react-gtm?minimal=true
+[ci-image]: https://github.com/phantomstudios/gtm/workflows/Test/badge.svg
 [ci-url]: https://github.com/phantomstudios/gtm/actions
