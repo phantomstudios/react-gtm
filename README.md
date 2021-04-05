@@ -26,7 +26,7 @@ npm i @phntms/react-gtm
 | -------- | ---- | ------- | -------- | ------- |
 | **id** | `string` | | **Yes** | The Container ID that uniquely identifies the GTM Container. Will be in the format; `GTM-000000`. |
 
-To initialize GTM, add the `TrackingHeadScript` to the `head` of the page and `TrackingBodyScript` to the `body`.
+To initialize GTM, add `TrackingHeadScript` to the `head` of the page and `TrackingBodyScript` to the `body`.
 
 Example initialization in Next.js:
 
@@ -89,7 +89,7 @@ This library extends `window` and exposes the `window.dataLayer` GTM container o
 
 ## Further Resources
 
-When implementing custom GTM events, the following is recommended to aid implementation:
+Useful resource for implementing custom GTM events;
 
 - [Omnibug](https://chrome.google.com/webstore/detail/omnibug/bknpehncffejahipecakbfkomebjmokl?hl=en) - Chrome browser extension to decode and display outgoing GTM events from within Inspect Element.
 
