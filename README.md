@@ -8,18 +8,7 @@ A lightweight React library to implement custom Google Tag Manager events.
 
 ## Introduction
 
-Designed to use and extend [GTM](https://developers.google.com/tag-manager/quickstart) snippets. This library is also SSR safe and does not break when used without window existing. Example of a basic custom event:
-
-```javascript
-import { trackEvent } from "@phntms/react-gtm";
-
-trackEvent("customEvent", {
-  name: "CTA - To External",
-  category: "CTA",
-  action: "To: https://phantom.land/",
-  label: "Click",
-});
-```
+Designed to use and extend [GTM](https://developers.google.com/tag-manager/quickstart) snippets. This library is also SSR safe and does not break when used without window existing.
 
 ## Installation
 
@@ -30,6 +19,12 @@ npm i @phntms/react-gtm
 ```
 
 ## Usage
+
+### &lt;TrackingHeadScript /> and &lt;TrackingBodyScript />
+
+| Property | Type | Default | Required | Notes |
+| -------- | ---- | ------- | -------- | ------- |
+| **id** | `string` | | **Yes** | The Container ID that uniquely identifies the GTM Container. Will be in the format; `GTM-000000`. |
 
 To initialize GTM, add the `TrackingHeadScript` to the `head` of the page and `TrackingBodyScript` to the `body`.
 
@@ -64,14 +59,6 @@ export default class MyDocument extends Document {
 }
 ```
 
-## Components
-
-### &lt;TrackingHeadScript /> and &lt;TrackingBodyScript />
-
-| Property | Type | Default | Required | Notes |
-| -------- | ---- | ------- | -------- | ------- |
-| **id** | `string` | | **Yes** | The Container ID that uniquely identifies the GTM Container. Will be in the format; `GTM-000000`. |
-
 **Note**: If used alongside any cookie consent scripts, `<TrackingHeadScript />` must be placed after.
 
 ### trackEvent()
@@ -81,15 +68,28 @@ export default class MyDocument extends Document {
 | event | `string` | "interaction" | No | Custom GTM event name, such as "customEvent". |
 | data | `[key: string]: any` | undefined | No | Optional data values to add to GTM event. Example of recommended properties to include; `name`, `category`, `action` and `label`. |
 
-Primarily function used to push new tracking events to GTM container.
+Used to push new tracking events to GTM container.
+
+Example of a basic tracking event:
+
+```javascript
+import { trackEvent } from "@phntms/react-gtm";
+
+trackEvent("customEvent", {
+  name: "CTA - To External",
+  category: "CTA",
+  action: "To: https://phantom.land/",
+  label: "Click",
+});
+```
 
 ### window.dataLayer
 
-This library extends `window` and exposes the `window.dataLayer` object, which contains all GTM events passed into Google Tag Manager.
+This library extends `window` and exposes the `window.dataLayer` GTM container object.
 
 ## Further Resources
 
-When implementing GTM events, the following resources are recommended to aid implementation:
+When implementing custom GTM events, the following is recommended to aid implementation:
 
 - [Omnibug](https://chrome.google.com/webstore/detail/omnibug/bknpehncffejahipecakbfkomebjmokl?hl=en) - Chrome browser extension to decode and display outgoing GTM events from within Inspect Element.
 
