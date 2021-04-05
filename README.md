@@ -22,9 +22,9 @@ npm i @phntms/react-gtm
 
 ### &lt;TrackingHeadScript /> and &lt;TrackingBodyScript />
 
-| Property | Type | Default | Required | Notes |
-| -------- | ---- | ------- | -------- | ------- |
-| **id** | `string` | | **Yes** | ID that uniquely identifies GTM Container. Will be in the format; `GTM-xxxxxx`. |
+| Property | Type     | Default | Required | Notes                                                                           |
+| -------- | -------- | ------- | -------- | ------------------------------------------------------------------------------- |
+| **id**   | `string` |         | **Yes**  | ID that uniquely identifies GTM Container. Will be in the format; `GTM-xxxxxx`. |
 
 To initialize GTM, add `TrackingHeadScript` to the `head` of the page and `TrackingBodyScript` to the `body`.
 
@@ -63,10 +63,10 @@ export default class MyDocument extends Document {
 
 ### trackEvent()
 
-| Parameter | Type | Default | Required | Notes |
-| -------- | ---- | ------- | -------- | ------- |
-| event | `string` | "interaction" | No | Custom GTM event name, such as "customEvent". |
-| data | `[key: string]: any` | undefined | No | Optional data values to add to GTM event. Example of recommended properties to include; `name`, `category`, `action` and `label`. |
+| Parameter | Type                 | Default       | Required | Notes                                                                                                                             |
+| --------- | -------------------- | ------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| event     | `string`             | "interaction" | No       | Custom GTM event name, such as "customEvent".                                                                                     |
+| data      | `[key: string]: any` | undefined     | No       | Optional data values to add to GTM event. Example of recommended properties to include; `name`, `category`, `action` and `label`. |
 
 Used to push new tracking events to GTM container.
 
