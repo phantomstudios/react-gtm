@@ -22,8 +22,8 @@ npm i @phntms/react-gtm
 
 ### &lt;TrackingHeadScript /> and &lt;TrackingBodyScript />
 
-| Property | Type     | Default | Required | Notes                                                                           |
-| -------- | -------- | ------- | -------- | ------------------------------------------------------------------------------- |
+| Property | Type     | Default   | Required | Notes                                                                           |
+| -------- | -------- | --------- | -------- | ------------------------------------------------------------------------------- |
 | **id**   | `string` | undefined | **Yes**  | ID that uniquely identifies GTM Container. Will be in the format; `GTM-xxxxxx`. |
 
 To initialize GTM, add `TrackingHeadScript` to the `head` of the page and `TrackingBodyScript` to the `body`.
