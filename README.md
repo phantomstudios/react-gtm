@@ -63,9 +63,9 @@ export default class MyDocument extends Document {
 
 ### trackEvent()
 
-| Parameter | Type                 | Default       | Required | Notes                                                                                                                             |
-| --------- | -------------------- | ------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| event     | `string`             | "interaction" | No       | Custom GTM event name, such as "customEvent".                                                                                     |
+| Parameter | Type             | Default       | Required | Notes                                                                                                                             |
+| --------- | ---------------- | ------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| event     | `string`         | "interaction" | No       | Custom GTM event name, such as "customEvent".                                                                                     |
 | data      | `EventDataProps` | undefined     | No       | Optional data values to add to GTM event. Example of recommended properties to include; `name`, `category`, `action` and `label`. |
 
 `EventDataProps` supports any data value(s) in the format `[key: string]: any`.
@@ -73,7 +73,6 @@ export default class MyDocument extends Document {
 Used to push new tracking events to GTM container.
 
 Example of a basic tracking event:
-
 
 ```javascript
 import { trackEvent } from "@phntms/react-gtm";
