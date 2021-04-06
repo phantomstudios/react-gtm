@@ -2,7 +2,7 @@ export interface EmbedTrackingProps {
   id?: string;
 }
 
-export interface TrackingEventProps {
+export interface EventDataProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [key: string]: any;
 }
