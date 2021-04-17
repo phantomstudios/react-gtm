@@ -7,11 +7,11 @@ about: "Do you want to suggest a new feature?"
 
 > What is the problem you're trying to solve?
 
-e.g. "We need the ability to make basic POST requests and send a JSON payload..."
+e.g. "We need the ability to see what's been sent..."
 
 > What solution would you like to see?
 
-e.g. "A new input argument that accepts..."
+e.g. "A new method to see whats been sent..."
 
 <!--
 Before posting, please check that the feature hasn't already been:

@@ -95,6 +95,12 @@ Useful resource for implementing custom GTM events:
 
 - [Omnibug](https://chrome.google.com/webstore/detail/omnibug/bknpehncffejahipecakbfkomebjmokl?hl=en) - Chrome browser extension to decode and display outgoing GTM events from within Inspect Element.
 
+## 🍰 Contributing
+
+Want to get involved, or found an issue? Please contribute using the GitHub Flow. Create a branch, add commits, and open a Pull Request or submit a new issue.
+
+Please read `CONTRIBUTING` for details on our `CODE_OF_CONDUCT`, and the process for submitting pull requests to us!
+
 [npm-image]: https://img.shields.io/npm/v/@phntms/react-gtm.svg?style=flat-square&logo=react
 [npm-url]: https://npmjs.org/package/@phntms/react-gtm
 [npm-downloads-image]: https://img.shields.io/npm/dm/@phntms/react-gtm.svg
