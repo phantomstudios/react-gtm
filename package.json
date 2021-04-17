@@ -1,7 +1,7 @@
 {
   "name": "@phntms/react-gtm",
   "description": "React Google Tag Manager",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "homepage": "https://github.com/phantomstudios/react-gtm#readme",
@@ -14,9 +14,11 @@
   },
   "keywords": [
     "react",
-    "hooks",
-    "hook",
-    "react-hook"
+    "lightweight",
+    "gtm",
+    "typescript",
+    "tagmanager",
+    "googletagmanager"
   ],
   "scripts": {
     "build": "tsc",
