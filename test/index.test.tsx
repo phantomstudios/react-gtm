@@ -46,7 +46,7 @@ describe("trackEvent()", () => {
       action: "action",
       label: "label",
     };
-    trackEvent(event, data);
+    trackEvent({ event, data });
 
     expect(window.dataLayer[0]).toEqual({ event, ...data });
   });

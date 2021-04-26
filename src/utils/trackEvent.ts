@@ -1,4 +1,4 @@
-import { EventDataProps } from "../types";
+import { EventTrackingProps, EventDataProps } from "../types";
 import { IS_BROWSER } from "./platform";
 
 declare global {
@@ -7,13 +7,12 @@ declare global {
   }
 }
 
-const trackEvent = (event = "interaction", data?: EventDataProps) => {
-  // If not in browser and dataLayer doesn't exist, return...
+const trackEvent = (props?: EventTrackingProps) => {
   if (!IS_BROWSER || !window.dataLayer) return;
 
-  // Else, add tracking event
+  const event = props?.event ? "customEvent" : props?.event;
   window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({ event, ...data });
+  window.dataLayer.push({ event, ...props?.data });
 };
 
 export default trackEvent;
