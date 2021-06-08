@@ -51,6 +51,20 @@ describe("trackEvent()", () => {
     expect(window.dataLayer[0]).toEqual({ event, ...data });
   });
 
+  it("defaults event to customEvent if left undefined", async () => {
+    if (!IS_BROWSER) return;
+
+    const data = {
+      name: "name",
+      category: "category",
+      action: "action",
+      label: "label",
+    };
+    trackEvent({ data });
+
+    expect(window.dataLayer[0]).toEqual({ event: "customEvent", ...data });
+  });
+
   it("doesn't break build if tracking event empty", async () => {
     if (!IS_BROWSER) return;
 
