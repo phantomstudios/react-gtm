@@ -42,20 +42,18 @@ import { TrackingHeadScript, TrackingBodyScript } from "@phntms/react-gtm";
 const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_TRACKING_ID || "";
 
 export default class MyDocument extends Document {
-  render() {
-    return (
-      <Html>
-        <Head>
-          <TrackingHeadScript id={GA_TRACKING_ID} />
-        </Head>
-        <body>
-          <TrackingBodyScript id={GA_TRACKING_ID} />
-          <Main />
-          <NextScript />
-        </body>
-      </Html>
-    );
-  }
+  render = () => (
+    <Html>
+      <Head>
+        <TrackingHeadScript id={GA_TRACKING_ID} />
+      </Head>
+      <body>
+        <TrackingBodyScript id={GA_TRACKING_ID} />
+        <Main />
+        <NextScript />
+      </body>
+    </Html>
+  );
 }
 ```
 
@@ -75,9 +73,8 @@ import { trackEvent } from "@phntms/react-gtm";
 trackEvent({
   event: "customEvent",
   data: {
-    name: "CTA - To External",
+    action: "Click - To: https://phantom.land/",
     category: "CTA",
-    action: "To: https://phantom.land/",
     label: "Click",
   },
 });
@@ -85,10 +82,10 @@ trackEvent({
 
 ### EventDataProps
 
-| Parameter | Type             | Default       | Required | Notes                                                                                                                                             |
-| --------- | ---------------- | ------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| event     | `string`         | "customEvent" | No       | Custom GTM event name, defaults to `customEvent`.                                                                                                 |
-| data      | `EventDataProps` | undefined     | No       | Supports any value(s) in the format `[key: string]: any`. Example of recommended properties to include; `name`, `category`, `action` and `label`. |
+| Parameter | Type             | Default       | Required | Notes                                                                                                                                     |
+| --------- | ---------------- | ------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| event     | `string`         | "customEvent" | No       | Custom GTM event name, defaults to `customEvent`.                                                                                         |
+| data      | `EventDataProps` | undefined     | No       | Supports any value(s) in the format `[key: string]: any`. Example of recommended properties to include; `action`, `category` and `label`. |
 
 ### window.dataLayer
 
