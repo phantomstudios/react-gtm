@@ -1,7 +1,7 @@
 {
   "name": "@phntms/react-gtm",
-  "description": "React Google Tag Manager",
-  "version": "0.0.5",
+  "description": "A lightweight React library to implement custom Google Tag Manager events.",
+  "version": "0.0.6",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "homepage": "https://github.com/phantomstudios/react-gtm#readme",
