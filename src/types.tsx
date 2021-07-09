@@ -1,4 +1,5 @@
 export interface EmbedTrackingProps {
+  active: boolean;
   id?: string;
 }
 

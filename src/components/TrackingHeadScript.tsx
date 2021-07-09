@@ -2,9 +2,9 @@ import React from "react";
 
 import { EmbedTrackingProps } from "../types";
 
-const TrackingHeadScript = ({ id }: EmbedTrackingProps) => (
+const TrackingHeadScript = ({ id, active = true }: EmbedTrackingProps) => (
   <>
-    {id && (
+    {id && active && (
       <script
         dangerouslySetInnerHTML={{
           __html: `

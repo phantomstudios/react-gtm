@@ -2,9 +2,9 @@ import React from "react";
 
 import { EmbedTrackingProps } from "../types";
 
-const TrackingBodyScript = ({ id }: EmbedTrackingProps) => (
+const TrackingBodyScript = ({ id, active = true }: EmbedTrackingProps) => (
   <>
-    {id && (
+    {id && active && (
       <noscript>
         <iframe
           src={`https://www.googletagmanager.com/ns.html?id=${id}`}
