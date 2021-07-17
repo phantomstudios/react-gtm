@@ -8,7 +8,7 @@ A lightweight React library to implement custom Google Tag Manager events.
 
 ## Introduction
 
-Designed to use and extend [GTM](https://developers.google.com/tag-manager/quickstart) snippets. This library is also SSR safe and does not break when used without window existing.
+Designed to use and extend [Google Analytics 4](https://support.google.com/analytics/answer/10089681?hl=en). **Note**: If upgrading from react-gtm `0.0.6` or older, or currently using an older version of Google Analytics, you'll need to [upgrade](https://support.google.com/analytics/answer/9744165?hl=en). This library is also SSR safe and does not break when used without window existing.
 
 ## Installation
 
@@ -20,13 +20,13 @@ npm i @phntms/react-gtm
 
 ## Usage
 
-### &lt;TrackingHeadScript /> and &lt;TrackingBodyScript />
+### &lt;TrackingHeadScript />
 
 | Property | Type     | Default   | Required | Notes                                                                           |
 | -------- | -------- | --------- | -------- | ------------------------------------------------------------------------------- |
 | **id**   | `string` | undefined | **Yes**  | ID that uniquely identifies GTM Container. Will be in the format; `GTM-xxxxxx`. |
 
-To initialize GTM, add `TrackingHeadScript` to the `head` of the page and `TrackingBodyScript` to the `body`.
+To initialize GTM, add `TrackingHeadScript` to the `head` of the page.
 
 Example initialization in Next.js:
 
@@ -37,7 +37,7 @@ import Document, {
   Main,
   NextScript,
 } from "next/document";
-import { TrackingHeadScript, TrackingBodyScript } from "@phntms/react-gtm";
+import { TrackingHeadScript } from "@phntms/react-gtm";
 
 const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_TRACKING_ID || "";
 
@@ -48,7 +48,6 @@ export default class MyDocument extends Document {
         <TrackingHeadScript id={GA_TRACKING_ID} />
       </Head>
       <body>
-        <TrackingBodyScript id={GA_TRACKING_ID} />
         <Main />
         <NextScript />
       </body>
