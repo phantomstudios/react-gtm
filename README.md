@@ -8,7 +8,7 @@ A lightweight React library to implement custom Google Tag Manager events.
 
 ## Introduction
 
-Designed to use and extend [Google Analytics 4](https://support.google.com/analytics/answer/10089681?hl=en). **Note**: If upgrading from react-gtm `0.0.6` or older, or currently using an older version of Google Analytics, you'll need to [upgrade](https://support.google.com/analytics/answer/9744165?hl=en). This library is also SSR safe and does not break when used without window existing.
+Designed to use and extend [Google Analytics 4](https://support.google.com/analytics/answer/10089681?hl=en). **Note**: If upgrading from react-gtm `0.0.6` or older, or currently using an older version of Google Analytics, you'll need to [upgrade](https://support.google.com/analytics/answer/9744165?hl=en). This library is also SSR safe and does not break when used without window existing. This package is intended to be used with React / older Next.JS apps, for Next.JS 11 and above we recommend using [@phntms/next-gtm](https://www.npmjs.com/package/@phntms/next-gtm).
 
 ## Installation
 
@@ -22,9 +22,10 @@ npm i @phntms/react-gtm
 
 ### &lt;TrackingHeadScript />
 
-| Property | Type     | Default   | Required | Notes                                                                           |
-| -------- | -------- | --------- | -------- | ------------------------------------------------------------------------------- |
-| **id**   | `string` | undefined | **Yes**  | ID that uniquely identifies GTM Container. Will be in the format; `GTM-xxxxxx`. |
+| Property    | Type      | Default   | Notes                                                                                                     |
+| ----------- | --------- | --------- | --------------------------------------------------------------------------------------------------------- |
+| **id**      | `string`  | undefined | ID that uniquely identifies GTM Container. Example format: `GTM-xxxxxx`.                                  |
+| **disable** | `boolean` | false     | Used to disable tracking events. Use if you want user to consent to being tracked before tracking events. |
 
 To initialize GTM, add `TrackingHeadScript` to the `head` of the page.
 
@@ -60,9 +61,9 @@ export default class MyDocument extends Document {
 
 ### trackEvent()
 
-| Parameter | Type                 | Default   | Required | Notes                                           |
-| --------- | -------------------- | --------- | -------- | ----------------------------------------------- |
-| props     | `EventTrackingProps` | undefined | No       | Custom tracking event to push to GTM container. |
+| Parameter | Type                 | Default   | Notes                                           |
+| --------- | -------------------- | --------- | ----------------------------------------------- |
+| props     | `EventTrackingProps` | undefined | Custom tracking event to push to GTM container. |
 
 Example of a basic tracking event:
 
@@ -78,6 +79,15 @@ trackEvent({
   },
 });
 ```
+
+### enableTracking()
+
+| Parameter  | Type      | Default   | Notes                                                               |
+| ---------- | --------- | --------- | ------------------------------------------------------------------- |
+| **id**     | `string`  | undefined | Same ID used in `trackingHeadScript`. Example format: `GTM-xxxxxx`. |
+| **enable** | `boolean` | true      | Used to enable or disable tracking events.                          |
+
+**Note**: This _should_ only be used if needed, for example after user has consented to being tracked. You _shouldn't_ need to toggle this in normal usage.
 
 ### EventDataProps
 
