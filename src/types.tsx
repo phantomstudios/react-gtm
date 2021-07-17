@@ -1,5 +1,6 @@
 export interface EmbedTrackingProps {
   id?: string;
+  disable?: boolean;
 }
 
 export interface EventTrackingProps {
