@@ -8,7 +8,7 @@ A lightweight React library to implement custom Google Tag Manager events.
 
 ## Introduction
 
-Designed to use and extend [Google Analytics 4](https://support.google.com/analytics/answer/10089681?hl=en). **Note**: If upgrading from react-gtm `0.0.6` or older, or currently using an older version of Google Analytics, you'll need to [upgrade](https://support.google.com/analytics/answer/9744165?hl=en). This library is also SSR safe and does not break when used without window existing.
+Designed to use and extend [Google Analytics 4](https://support.google.com/analytics/answer/10089681?hl=en). **Note**: If upgrading from react-gtm `0.0.6` or older, or currently using an older version of Google Analytics, you'll need to [upgrade](https://support.google.com/analytics/answer/9744165?hl=en). This library is also SSR safe and does not break when used without window existing. This package is intended to be used with React / older Next.JS apps, for Next.JS 11 and above we recommend using [@phntms/next-gtm](https://www.npmjs.com/package/@phntms/next-gtm).
 
 ## Installation
 
