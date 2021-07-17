@@ -8,7 +8,7 @@ A lightweight React library to implement custom Google Tag Manager events.
 
 ## Introduction
 
-Designed to use and extend [GTM](https://developers.google.com/tag-manager/quickstart) snippets. This library is also SSR safe and does not break when used without window existing.
+Designed to use and extend [GTM](https://developers.google.com/tag-manager/quickstart) snippets. This library is also SSR safe and does not break when used without window existing. This package is intended to be used with React / older Next.JS apps, for Next.JS 11 and above we recommend using [@phntms/next-gtm](https://www.npmjs.com/package/@phntms/next-gtm).
 
 ## Installation
 
