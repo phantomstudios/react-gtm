@@ -116,5 +116,5 @@ Please read `CONTRIBUTING` for details on our `CODE_OF_CONDUCT`, and the process
 [npm-url]: https://npmjs.org/package/@phntms/react-gtm
 [npm-downloads-image]: https://img.shields.io/npm/dm/@phntms/react-gtm.svg
 [npm-downloads-url]: https://npmcharts.com/compare/@phntms/react-gtm?minimal=true
-[ci-image]: https://github.com/phantomstudios/gtm/workflows/Test/badge.svg
-[ci-url]: https://github.com/phantomstudios/gtm/actions
+[ci-image]: https://github.com/phantomstudios/react-gtm/workflows/Test/badge.svg
+[ci-url]: https://github.com/phantomstudios/react-gtm/actions
