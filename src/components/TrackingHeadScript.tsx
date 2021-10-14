@@ -15,11 +15,11 @@ const TrackingHeadScript = ({ id, disable = false }: EmbedTrackingProps) => (
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
-              window["ga-disable-${id}"] = ${disable.toString()};
+              window['ga-disable-${id}'] = ${disable.toString()};
 
               function gtag() { dataLayer.push(arguments); }
-              gtag("js", new Date());
-              gtag("config", "${id}", { page_path: window.location.pathname });
+              gtag('js', new Date());
+              gtag('config', '${id}', { page_path: window.location.pathname });
             `,
           }}
         />
