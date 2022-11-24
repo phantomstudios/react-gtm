@@ -8,6 +8,7 @@ declare global {
   }
 }
 
+//optional gaFormat arg to use gtag event format for GA4 only setups - datalayer.push only picked up by GTM
 const trackEvent = (props?: EventTrackingProps, gaFormat = false) => {
   if (!IS_BROWSER || !window.dataLayer) return;
 
@@ -16,7 +17,7 @@ const trackEvent = (props?: EventTrackingProps, gaFormat = false) => {
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({ event, ...props?.data });
   } else {
-    window.gtag("event", event, props.data);
+    window.gtag("event", event, props?.data);
   }
 };
 
