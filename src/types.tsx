@@ -1,5 +1,6 @@
 export interface EmbedTrackingProps {
   id?: string;
+  hasConsent?: boolean;
   disable?: boolean;
 }
 
