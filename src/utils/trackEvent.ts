@@ -3,7 +3,8 @@ import { IS_BROWSER } from "./platform";
 
 declare global {
   interface Window {
-    gtag: any;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    gtag: (...args: any[]) => void;
     dataLayer: EventDataProps[];
   }
 }
