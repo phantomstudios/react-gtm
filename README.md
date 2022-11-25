@@ -22,11 +22,11 @@ npm i @phntms/react-gtm
 
 ### &lt;TrackingHeadScript />
 
-| Property    | Type      | Default   | Notes                                                                                                                                |
-| -------------- | --------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------|
-| **id**         | `string`  | undefined | ID that uniquely identifies GTM Container or GA4 measurement. Example format: `GTM-xxxxxx` or `G-xxxxxx`.                                       |
-| **hasConsent** | `boolean` | true      | Used to set starting GA4 cookie consent mode (see setConsent function) https://support.google.com/analytics/answer/9976101?hl=en  |
-| **disable**    | `boolean` | false     | Used to disable tracking events. Use if you want to diable all tracking events                                                    |
+| Property       | Type      | Default   | Notes                                                                                                                            |
+| -------------- | --------- | --------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| **id**         | `string`  | undefined | ID that uniquely identifies GTM Container or GA4 measurement. Example format: `GTM-xxxxxx` or `G-xxxxxx`.                        |
+| **hasConsent** | `boolean` | true      | Used to set starting GA4 cookie consent mode (see setConsent function) https://support.google.com/analytics/answer/9976101?hl=en |
+| **disable**    | `boolean` | false     | Used to disable tracking events. Use if you want to diable all tracking events                                                   |
 
 To initialize GTM/GA4, add `TrackingHeadScript` to the `head` of the page.
 
@@ -62,10 +62,10 @@ export default class MyDocument extends Document {
 
 ### trackEvent()
 
-| Parameter | Type                 | Default   | Notes                                                                                               |
-| --------- | -------------------- | --------- | --------------------------------------------------------------------------------------------------- |
-| props     | `EventTrackingProps` | undefined | Custom tracking event to push to GTM container.                                                     |
-| gaFormat  | `boolean`            | false     | Replaces window.dataLayer.push with window.gtag - use when implementing GA4 without GTM             |
+| Parameter | Type                 | Default   | Notes                                                                                   |
+| --------- | -------------------- | --------- | --------------------------------------------------------------------------------------- |
+| props     | `EventTrackingProps` | undefined | Custom tracking event to push to GTM container.                                         |
+| gaFormat  | `boolean`            | false     | Replaces window.dataLayer.push with window.gtag - use when implementing GA4 without GTM |
 
 Example of a basic tracking event:
 
@@ -81,7 +81,8 @@ trackEvent({
   },
 });
 ```
-**Note**: the default behaviour uses `window.dataLayer.push` - which requires GTM and configured event triggers to log the event to GA4. 
+
+**Note**: the default behaviour uses `window.dataLayer.push` - which requires GTM and configured event triggers to log the event to GA4.
 Use the gaFormat=true optional argument to send direct GA4 compatible 'events'.
 
 ### enableTracking()
@@ -93,11 +94,10 @@ Use the gaFormat=true optional argument to send direct GA4 compatible 'events'.
 
 **Note**: This _should_ only be used if needed, for example after user has consented to being tracked. You _shouldn't_ need to toggle this in normal usage.
 
-
 ### setConsent()
 
-| Parameter  | Type      | Default   | Notes                                                                |
-| ----------- | --------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Parameter   | Type      | Default   | Notes                                                                                                                                                                |
+| ----------- | --------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **consent** | `boolean` | undefined | Explicitiy sets the GA4 cookie consent mode (analytics_storage). Call this if implementing your own cookie banner logic and have set starting consent mode to false. |
 
 ### EventDataProps
