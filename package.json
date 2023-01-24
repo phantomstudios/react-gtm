@@ -1,7 +1,7 @@
 {
   "name": "@phntms/react-gtm",
   "description": "A lightweight React library to implement custom Google Tag Manager events.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "homepage": "https://github.com/phantomstudios/react-gtm#readme",
@@ -52,7 +52,6 @@
     "@typescript-eslint/parser": "^4.15.2",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.0.1",
-    "browser-env": "^3.2.6",
     "eslint": "^7.20.0",
     "eslint-config-prettier": "^8.0.0",
     "eslint-plugin-import": "^2.22.1",
