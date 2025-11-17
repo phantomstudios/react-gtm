@@ -89,11 +89,15 @@ describe("trackEvent()", () => {
 describe("enableTracking()", () => {
   it("enables tracking events if used", async () => {
     enableTracking(ID);
-    expect(window[`ga-disable-${ID}`]).toEqual("false");
+    expect(
+      (window as unknown as Record<string, string>)[`ga-disable-${ID}`]
+    ).toEqual("false");
   });
 
   it("disables tracking events if enable is set to false", async () => {
     enableTracking(ID, false);
-    expect(window[`ga-disable-${ID}`]).toEqual("true");
+    expect(
+      (window as unknown as Record<string, string>)[`ga-disable-${ID}`]
+    ).toEqual("true");
   });
 });
