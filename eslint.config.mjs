@@ -32,9 +32,15 @@ export default defineConfig([{
 
     languageOptions: {
         globals: {
-            ...globals.browser,
-            ...globals.node,
-            ...globals.jest,
+            ...Object.fromEntries(
+                Object.entries(globals.browser).filter(([key]) => key.trim() === key)
+            ),
+            ...Object.fromEntries(
+                Object.entries(globals.node).filter(([key]) => key.trim() === key)
+            ),
+            ...Object.fromEntries(
+                Object.entries(globals.jest).filter(([key]) => key.trim() === key)
+            ),
             React: "writable",
         },
 
